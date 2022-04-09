@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>KanaDay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <div class="container mt-5">
+                <h1>Create a list of Ala-Too students' birthdays</h1>
+                <img src="../static/image/logo.png" th:src="@{image/logo.png}" width="120" height="120" class="d-inline-block align-text-center">
+                <form method="post">
+                    <input type="text" name="name" placeholder="Write your name" class="form-control">
+                    <input type="text" name="data" placeholder="Write your Birthday"class="form-control">
+                    <button type="submit" class="button btn-success">Add</button>
+                </form>
+                <div>
+                    <h3 class="display-4 fw-bold lh-1 mb-3">list of Birthday</h3>
+                    <div class="feature col" th:each="el : ${posts}">
+                        <h2 class="col-lg-10 fs-4" th:text="${el.name}"/>
+                        <h3 class="col-lg-10 fs-4 opacity-75" th:text="${el.data}"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
